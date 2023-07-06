@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "5c6f8868-97c5-4472-ace0-a097cba42cef",
+		"name": "Final Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27221427"
+	},
+	"item": [
+		{
+			"name": "Добавление товара",
+			"item": [
+				{
+					"name": "Добавить количество товара",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/good/add=1&id=1"
+					},
+					"response": []
+				},
+				{
+					"name": "добавить количество товара Quant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"count\":\"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/good/addQuant"
+					},
+					"response": []
+				},
+				{
+					"name": "add Quantity body->Good",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"title\": \"GeForce RTX 4444\",\r\n        \"price\": 100000.0,\r\n        \"quantityInStorage\": 6,\r\n        \"category\": {\r\n            \"id\": 1,\r\n            \"categoryName\": \"Computer accessories\",\r\n            \"goods\": []\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/good/addQuantity"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Новая Категория",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryName\": \"Computer accessories\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/category/new"
+			},
+			"response": []
+		},
+		{
+			"name": "Новый товар",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"GeForce RTX 3333\",\r\n    \"price\":\"100000\",\r\n    \"quantityInStorage\": 3,\r\n    \"category\":\"Computer accessories\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/good/new"
+			},
+			"response": []
+		},
+		{
+			"name": "Вся категория",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/good/category=1"
+			},
+			"response": []
+		},
+		{
+			"name": "Все товары",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/good/"
+			},
+			"response": []
+		},
+		{
+			"name": "Отгрузка",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"count\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/good/delQuant"
+			},
+			"response": []
+		},
+		{
+			"name": "new user + auth with cookie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\" : \"login1\",\r\n    \"password\" : \"789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/user/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Показать всех Юзеров",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/user/get"
+			},
+			"response": []
+		}
+	]
+}
